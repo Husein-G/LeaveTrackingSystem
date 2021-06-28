@@ -38,7 +38,18 @@ public class EmployeeService {
 
     public void updateById(Integer empId, String uname, String fname,
                            String lname, String dob, String email) {
-
+        EmployeeData employeeData = new EmployeeData();
+        employeeData = findById(empId);
+        if (!(uname.isEmpty()))
+            employeeData.setUserName(uname);
+        if (!(fname.isEmpty()))
+            employeeData.setFirstName(fname);
+        if (!(lname.isEmpty()))
+            employeeData.setLastName(lname);
+        if (!(dob.isEmpty()))
+            employeeData.setDob(dob);
+        if (!(email.isEmpty()))
+            employeeData.setEmail(email);
     }
 
     public void deleteById(Integer id) {
